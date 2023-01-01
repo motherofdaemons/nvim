@@ -60,6 +60,15 @@ function M.config()
   -- Initialize rust_analyzer with rust-tools
   require("rust-tools").setup({ server = rust_lsp })
 
+  -- autocmd to format on save
+  -- this should only format if we have an lsp that tells us how to format
+  local format_on_save = function()
+    vim.lsp.buf.formatting_sync()
+  end
+
+  vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+    callback = format_on_save,
+  })
 end
 
 return M
