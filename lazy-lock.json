@@ -7,7 +7,7 @@
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
   "dracula.nvim": { "branch": "main", "commit": "9195c478cf05c3369131a7a9c606cbbc5247b0c6" },
   "friendly-snippets": { "branch": "main", "commit": "1a6a02350568d6830bcfa167c72f9b6e75e454ae" },
-  "lazy.nvim": { "branch": "main", "commit": "0fadb5e1cec709de839ecd6937b338b9201734ad" },
+  "lazy.nvim": { "branch": "main", "commit": "371117616405c9d319f260b43f114cd4b8bfcc9f" },
   "lsp-zero.nvim": { "branch": "main", "commit": "ebc745dd6d9ee7032326ba0ea5fb9ee6e91d0aae" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "aa25b4153d2f2636c3b3a8c8360349d2b29e7ae3" },
   "mason.nvim": { "branch": "main", "commit": "1592493e3406c271e9128b4d424731e25f1ff2a1" },
