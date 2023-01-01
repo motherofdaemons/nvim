@@ -38,9 +38,8 @@ function M.config()
 
   -- change the default key mappings
   local cmp = require("cmp")
-
   local cmp_mappings = lsp.defaults.cmp_mappings({
-    ["<C-space>"] = cmp.mapping.complete(),
+    ["<C-CR>"] = cmp.mapping.complete(),
     ["<C-e>"] = cmp.mapping.abort(),
   })
 
