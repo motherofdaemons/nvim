@@ -62,12 +62,8 @@ function M.config()
 
   -- autocmd to format on save
   -- this should only format if we have an lsp that tells us how to format
-  local format_on_save = function()
-    vim.lsp.buf.formatting_sync()
-  end
-
   vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-    callback = format_on_save,
+    callback = function() vim.lsp.buf.format() end,
   })
 end
 
