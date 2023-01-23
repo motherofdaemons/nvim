@@ -1,5 +1,6 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "eab2c83a0207369900e92783f56990808082eac2" },
+  "FixCursorHold.nvim": { "branch": "master", "commit": "70a9516a64668cbfe59f31b66d0a21678c5e9b12" },
   "LuaSnip": { "branch": "master", "commit": "448e6bc421c899fd7330e0f710f85867a332a177" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "59224771f91b86d1de12570b4070fe4ad7cd1eeb" },
@@ -19,6 +20,8 @@
   "mason-lspconfig.nvim": { "branch": "main", "commit": "d7ff61a828d59bc593ea3e2020508c114048d790" },
   "mason.nvim": { "branch": "main", "commit": "beb79ced9e49ea1ce2bd170b79e0cf819a8377c7" },
   "neogen": { "branch": "main", "commit": "465af9d6c6fb7f360175991dcc23fc10917e3a06" },
+  "neotest": { "branch": "master", "commit": "6676edc3078b8936df989df639900dc9a70dfc8a" },
+  "neotest-rust": { "branch": "main", "commit": "53db2f682e337c2188d81e8ecdf779bff869fb74" },
   "no-neck-pain.nvim": { "branch": "main", "commit": "40369b2d38271e320d3584860c89b87299bf60ae" },
   "nvim-cmp": { "branch": "main", "commit": "11a95792a5be0f5a40bab5fc5b670e5b1399a939" },
   "nvim-code-action-menu": { "branch": "main", "commit": "e4399dbaf6eabff998d3d5f1cbcd8d9933710027" },
