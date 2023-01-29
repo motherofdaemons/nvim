@@ -2,7 +2,8 @@ local M = {
   "folke/trouble.nvim",
   dependencies = {
     "kyazdani42/nvim-web-devicons",
-  }
+  },
+  lazy = false,
 }
 
 function M.config()

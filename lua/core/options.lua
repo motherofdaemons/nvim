@@ -4,6 +4,8 @@ vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
+-- term gui colors
+vim.opt.termguicolors = true
 
 -- some stuff I like to use 2 spaces
 vim.api.nvim_create_autocmd("FileType", {
