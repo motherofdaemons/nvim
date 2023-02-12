@@ -7,7 +7,7 @@ local M = {
 
 function M.config()
   -- configure catppuccin
-  require("catppuccin").setup({ flavour = "macchiato" })
+  require("catppuccin").setup({ flavour = "frappe" })
   -- set our colorscheme
   vim.cmd [[colorscheme catppuccin]]
 end
