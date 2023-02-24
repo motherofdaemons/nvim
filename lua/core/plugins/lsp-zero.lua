@@ -17,6 +17,14 @@ local M = {
     -- Snippets
     "L3MON4D3/LuaSnip",
     "rafamadriz/friendly-snippets",
+
+    -- Linting
+    "jose-elias-alvarez/null-ls.nvim",
+    "jay-babu/mason-null-ls.nvim",
+
+    -- Extra dependencies
+    "simrat39/rust-tools.nvim",
+    "Saecki/crates.nvim",
   }
 }
 
@@ -25,10 +33,14 @@ function M.config()
   lsp.preset("recommended")
 
   lsp.ensure_installed({
-    "sumneko_lua",
+    "lua_ls",
     "rust_analyzer",
     "clangd",
   })
+
+  -- don't initialize this language server
+  -- we will use rust-tools to setup rust_analyzer
+  lsp.skip_server_setup({ 'rust_analyzer' })
 
   -- get stuff setup to work with neovim functions
   lsp.nvim_workspace()
@@ -59,6 +71,16 @@ function M.config()
 
   -- Initialize rust_analyzer with rust-tools
   require("rust-tools").setup({ server = rust_lsp })
+  require("crates").setup()
+
+
+  -- Setup null-ls
+  require("mason-null-ls").setup({
+    automatic_setup = true,
+  })
+
+  require("null-ls").setup()
+  require("mason-null-ls").setup_handlers()
 
   -- autocmd to format on save
   -- this should only format if we have an lsp that tells us how to format
