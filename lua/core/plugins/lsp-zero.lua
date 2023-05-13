@@ -34,7 +34,6 @@ function M.config()
 
   lsp.ensure_installed({
     "lua_ls",
-    "rust_analyzer",
     "clangd",
   })
 
@@ -75,12 +74,11 @@ function M.config()
 
 
   -- Setup null-ls
+  require("null-ls").setup()
   require("mason-null-ls").setup({
     automatic_setup = true,
   })
 
-  require("null-ls").setup()
-  require("mason-null-ls").setup_handlers()
 
   -- autocmd to format on save
   -- this should only format if we have an lsp that tells us how to format
