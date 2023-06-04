@@ -11,10 +11,10 @@ function M.config()
       -- Navigation
       wk.register({
         ["]"] = {
-          c = { gs.next_hunk, "Next git hunk" },
+          h = { gs.next_hunk, "Next git hunk" },
         },
         ["["] = {
-          c = { gs.prev_hunk, "Previous git hunk" },
+          h = { gs.prev_hunk, "Previous git hunk" },
         },
       })
 
