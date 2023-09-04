@@ -1,9 +1,6 @@
 local M = {
   "RaafatTurki/hex.nvim",
+  opts = {},
 }
-
-function M.config()
-  require("hex").setup()
-end
 
 return M

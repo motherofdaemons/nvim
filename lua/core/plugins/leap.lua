@@ -3,10 +3,9 @@ local M = {
   dependencies = {
     "tpope/vim-repeat",
   },
+  config = function()
+    require("leap").add_default_mappings()
+  end,
 }
-
-function M.config()
-  require("leap").add_default_mappings()
-end
 
 return M
