@@ -1,9 +1,6 @@
 local M = {
   "lewis6991/gitsigns.nvim",
-}
-
-function M.config()
-  require("gitsigns").setup({
+  opts = {
     on_attach = function()
       local gs = package.loaded.gitsigns
       local wk = require("which-key")
@@ -51,7 +48,7 @@ function M.config()
         },
       }, { prefix = "<leader>" })
     end
-  })
-end
+  },
+}
 
 return M

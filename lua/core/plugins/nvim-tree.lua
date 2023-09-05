@@ -3,10 +3,8 @@ local M = {
   dependencies = {
     "kyazdani42/nvim-web-devicons",
   },
+  opts = {},
 }
 
-function M.config()
-  require("nvim-tree").setup()
-end
 
 return M
