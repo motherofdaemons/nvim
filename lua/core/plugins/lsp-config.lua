@@ -23,6 +23,7 @@ local M = {
 
     -- Debug
     "mfussenegger/nvim-dap",
+    "rcarriga/nvim-dap-ui",
 
     -- Extra dependencies
     {
@@ -31,7 +32,7 @@ local M = {
       ft = { 'rust' },
     },
     "Saecki/crates.nvim",
-    { "folke/neodev.nvim", opts = {} },
+    { "folke/neodev.nvim", opts = { library = { plugins = { "nvim-dap-ui" }, types = true }, } },
     {
       "lvimuser/lsp-inlayhints.nvim",
       opts = {}
@@ -59,6 +60,15 @@ local M = {
         vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
         vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
         vim.keymap.set({ 'n', 'x' }, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
+
+        local wk = require("which-key")
+        wk.register({
+          d = {
+            name = "Debug",
+            r = { "<cmd>RustLsp debuggables<cr>", "Run" },
+          },
+          prefix = "<leader>"
+        })
       end
     })
 
@@ -137,6 +147,33 @@ local M = {
     })
 
 
+    -- DAP UI
+    require("dapui").setup()
+    local dap, dapui = require("dap"), require("dapui")
+    dap.listeners.before.attach.dapui_config = function()
+      dapui.open()
+    end
+    dap.listeners.before.launch.dapui_config = function()
+      dapui.open()
+    end
+    dap.listeners.before.event_terminated.dapui_config = function()
+      dapui.close()
+    end
+    dap.listeners.before.event_exited.dapui_config = function()
+      dapui.close()
+    end
+    local wk = require("which-key")
+    wk.register({
+      d = {
+        name = "Debug",
+        b = { "<cmd>DapToggleBreakpoint<cr>", "Toggle Breakpoint" },
+        c = { "<cmd>DapContinue<cr>", "Continue" },
+        n = { "<cmd>DapStepOver<cr>", "Step Over" },
+        o = { "<cmd>DapStepOut<cr>", "Step Out" },
+        q = { "<cmd>DapTerminate<cr>", "Terminate" },
+      },
+      prefix = "<leader>"
+    })
 
     -- autocmd to format on save
     -- this should only format if we have an lsp that tells us how to format
